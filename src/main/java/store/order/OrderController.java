@@ -13,16 +13,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 @FeignClient("store-order")
 public interface OrderController {
 
-    @GetMapping("/")
+    @GetMapping("/order/")
     public List<OrderOut> list();
 
-    @GetMapping("/{id}")
+    @GetMapping("/order/{id}")
     public OrderOut get(@PathVariable(required = true) String id);
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/order/{id}")
     public void delete(@PathVariable(required = true) String id);
 
-    @PostMapping("/")
+    @PostMapping("/order/")
     public ResponseEntity<Object> create(@RequestBody OrderIn in);
 
 }
