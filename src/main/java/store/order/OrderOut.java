@@ -2,15 +2,15 @@ package store.order;
 
 import java.util.List;
 
-public record OrderOut(
+import store.customer.CustomerOut;
 
+public record OrderOut (
     String id,
+    String date,
+    CustomerOut customer,
     List<ItemOut> items
-
 ) {
-
-    public OrderOut(String id) {
-        this(id, null);
+    OrderOut(String id) {
+        this(id, null, null, null);
     }
-
-}
+ }
